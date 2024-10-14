@@ -1,0 +1,33 @@
+.header{
+    background-color: var(--milk);
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    padding: 24px 64px;
+    display: flex;
+}
+
+.headerTitle{
+    margin-right: 450px;
+}
+
+.nalLinks{
+    display: flex;
+    gap: 32px;
+}
+
+.navLink{
+    text-decoration:none;
+    color: var(--main);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5em;
+}
+
+.navLinkActive{
+    text-decoration:none;
+    color: var(--button-hover);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5em;
+}
