@@ -7,13 +7,11 @@ import css from './CatalogTrucksBar.module.css'
 const CatalogTrucksBar = () => {
 
   const items = useSelector(getAllTrucks)
-  const number = useSelector(getTrucksNumber)
-
-  console.log(items, number)
 
   return (
     <ul className={css.truckList}>
-      {items.map(({ id, name, price, rating, location, gallery, reviews }) => 
+      {items?.map(({ id, name, price, rating, location, gallery, reviews, description,
+        automatic, kitchen, bathroom, AC, TV, radio,}) => 
         <li key={id} className={ css.truckListItem}>
         <CatalogTruckCard
             name={name}
@@ -22,9 +20,11 @@ const CatalogTrucksBar = () => {
             location={location}
             gallery={gallery}
             reviews={reviews}
+            description={description}
         />
       </li>
       )}
+      
     </ul>
   )
 }

@@ -1,0 +1,16 @@
+.truckList{
+    margin-top: 48px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.truckListItem{
+    max-width: 888px;
+    max-height: 368px;
+    border: 1px solid var(--d-grey);
+    border-radius: 20px;
+    background-color: var(--white);
+    padding: 24px;
+}

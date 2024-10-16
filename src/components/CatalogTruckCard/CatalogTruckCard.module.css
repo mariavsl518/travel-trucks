@@ -1,0 +1,22 @@
+.truckCard{
+    display: flex;
+    gap: 24px;
+}
+
+.thumbImgContainer{
+    width: 292px;
+    height: 320px;
+    object-fit: cover;
+}
+
+.thumbImg{
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.truckCardInfoBox{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
