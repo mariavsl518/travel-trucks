@@ -1,0 +1,17 @@
+.wrapper{
+    display: inline-flex;
+    padding: 12px 18px;
+    align-items: center;
+    gap: 8px;
+    background-color: #F2F4F7;
+    border-radius: 100px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.25em;
+}
+
+/* {
+    width: 20px;
+    height: 20px;
+} */

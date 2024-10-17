@@ -1,14 +1,16 @@
 import css from './CatalogTruckCard.module.css'
 import { Link } from 'react-router-dom'
+import Transmission from '../../img/categories/Transmission'
+import Kitchen from '../../img/categories/Kitchen'
+import Bathroom from '../../img/categories/Bathroom'
 
-const CatalogTruckCard = ({ id, name, price, rating, location, gallery: { 0: thumb }, reviews, description }) => {
-  
-  // console.log(description)
+const CatalogTruckCard = ({ id, name, price, rating, location, gallery: { 0: thumb }, reviews, description,
+transmission, kitchen, bathroom, AC, TV, radio,}) => {
 
   const textCut = (text) => {
     const wordsArray = text.split(' ')
-    return wordsArray.length > 9
-      ? wordsArray.slice(0, 10).join(' ')+'...'
+    return wordsArray.length > 12
+      ? wordsArray.slice(0, 12).join(' ')+'...'
       : text
     };
 
@@ -19,15 +21,32 @@ const CatalogTruckCard = ({ id, name, price, rating, location, gallery: { 0: thu
         src={thumb.thumb} alt='Truck' />
       </div>
       <div className={css.truckCardInfoBox}>
-        <div>
-          <h4>{name}</h4>
-          <span>{price}</span>
+        <div className={css.truckCardInfoHeader}>
+          <p>{name}</p>
+          <p>€{price}</p>
         </div>
-        <span>{rating}(
+        <div className={css.truckCardSecondLine}>
+          <span>{rating}(
           <Link to='/reviews'>{reviews.length} reviews</Link>
           )</span>
-        <span>{location}</span>
+          <span>{location}</span>
+        </div>
         <p>{textCut(description)}</p>
+        <ul className={css.categoriesBlock}>
+          <li>
+            {transmission ? <Transmission transmission={transmission} /> : <></>}
+          </li>
+          <li>
+            {kitchen ? <Kitchen/> : <></>}
+          </li>
+          <li>
+            { bathroom? <Bathroom/> : <></>}
+          </li>
+        </ul>
+          <Link className={css.showMoreBtn}
+            to='/details'>
+            Show more
+          </Link>
       </div>
     </div>
   )

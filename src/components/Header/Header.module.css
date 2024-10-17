@@ -1,10 +1,10 @@
 .header{
     background-color: var(--milk);
-    position: absolute;
-    top: 0;
     width: 100vw;
+    max-height: 72px;
     padding: 24px 64px;
     display: flex;
+    align-items: center;
 }
 
 .headerTitle{

@@ -11,7 +11,7 @@ const CatalogTrucksBar = () => {
   return (
     <ul className={css.truckList}>
       {items?.map(({ id, name, price, rating, location, gallery, reviews, description,
-        automatic, kitchen, bathroom, AC, TV, radio,}) => 
+        transmission, kitchen, bathroom, AC, TV, radio,}) => 
         <li key={id} className={ css.truckListItem}>
         <CatalogTruckCard
             name={name}
@@ -21,10 +21,16 @@ const CatalogTrucksBar = () => {
             gallery={gallery}
             reviews={reviews}
             description={description}
+            transmission={transmission}
+            kitchen={kitchen}
+            bathroom={bathroom}
+            AC={AC}
+            TV={TV}
+            radio={radio}
         />
       </li>
       )}
-      
+
     </ul>
   )
 }

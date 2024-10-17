@@ -1,9 +1,22 @@
 import React from 'react'
+import TVicon from '../../img/icons/TVicon'
 
 const CatalogSidebar = () => {
   return (
     <div>
-      <h3>Sidebar here</h3>          
+      <div>Location</div>     
+      <div>
+        <p>Vehicle equipment</p>
+        <ul>
+          <li>
+          </li>
+          <li>
+          </li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
     </div>
   )
 }

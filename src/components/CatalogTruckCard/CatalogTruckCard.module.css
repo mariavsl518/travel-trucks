@@ -6,17 +6,70 @@
 .thumbImgContainer{
     width: 292px;
     height: 320px;
+    border-radius: 10px;
     object-fit: cover;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
 .thumbImg{
     display: block;
     height: 100%;
-    width: 100%;
 }
 
 .truckCardInfoBox{
+    width: 840px;
+    max-height: 320px;
     display: flex;
     flex-direction: column;
     gap: 24px;
+}
+
+.truckCardInfoHeader{
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.33em;
+    color: var(--main);
+}
+
+.truckCardSecondLine{
+    display: flex;
+    gap: 16px;
+}
+
+.categoriesBlock{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 8px;
+}
+
+.showMoreBtn{
+    display: block;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 165px;
+    height: 56px;
+    border-radius: 200px;
+    background-color: var(--button);
+}
+
+.showMoreBtn:hover{
+    background-color: var(--button-hover);
+}
+
+.showMoreLink{
+    text-decoration: none;
+    color: var(--white);
 }
