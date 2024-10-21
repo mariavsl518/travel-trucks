@@ -1,10 +1,10 @@
 import React from 'react'
 import RadioIcon from '../icons/RadioIcon'
-import './categories-styles.css'
+import css from './categories-styles.module.css'
 
 const Radio = () => {
   return (
-    <div className='wrapper'>
+    <div className={css.wrapper}>
       <RadioIcon/> Radio
     </div>
   )

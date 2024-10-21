@@ -1,9 +1,16 @@
+.trucksBar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
 .truckList{
-    margin-top: 48px;
     list-style: none;
     display: flex;
     flex-direction: column;
     gap: 32px;
+    margin: 0;
 }
 
 .truckListItem{
@@ -13,4 +20,17 @@
     border-radius: 20px;
     background-color: var(--white);
     padding: 24px;
+}
+
+.loadMoreBtn{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5em;
+    color: var(--main);
+    width: 145px;
+    height: 56px;
+    border-radius: 200px;
+    background-color: var(--white);
+    border: 1px solid var(--d-grey);
+    cursor: pointer;
 }

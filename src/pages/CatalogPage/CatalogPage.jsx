@@ -15,8 +15,8 @@ const CatalogPage = () => {
 
   return (
     <section className={css.catalogSection}>
-      <CatalogSidebar className={ css.sidebar} />
-      <CatalogTrucksBar className={css.truckbar} />
+      <CatalogSidebar />
+      <CatalogTrucksBar />
     </section>
   )
 }

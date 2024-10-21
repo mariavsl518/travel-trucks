@@ -1,6 +1,6 @@
 .header{
     background-color: var(--milk);
-    width: 100vw;
+    min-width: 1440px;
     max-height: 72px;
     padding: 24px 64px;
     display: flex;

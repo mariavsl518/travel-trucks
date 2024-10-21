@@ -1,6 +1,6 @@
 .heroSection{
-    width: 1440px;
-    height: 696px;
+    min-width: 1440px;
+    height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

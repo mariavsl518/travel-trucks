@@ -4,8 +4,8 @@
 }
 
 .thumbImgContainer{
-    width: 292px;
-    height: 320px;
+    max-width: 292px;
+    max-height: 320px;
     border-radius: 10px;
     object-fit: cover;
     overflow: hidden;

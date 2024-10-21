@@ -6,9 +6,15 @@ export const trucksSlice = createSlice({
     initialState: {
         loading: false,
         error: null,
-        items: []
+        items: [],
+        currentPage: 1,
+        itemsPerPage: 4,
     },
-    reducers: {},
+    reducers: {
+        setPage: (state, action) => { 
+            state.currentPage = action.payload;
+        }
+    },
 
     extraReducers: (builder) => 
         builder
@@ -25,4 +31,5 @@ export const trucksSlice = createSlice({
             })
 })
 
+export const { setPage } = trucksSlice.actions;
 export default trucksSlice.reducer

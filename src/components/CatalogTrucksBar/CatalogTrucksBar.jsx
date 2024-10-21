@@ -1,15 +1,17 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { getAllTrucks, getTrucksNumber } from '../../redux/trucks/selectors.js'
+import { selectAllTrucks } from '../../redux/trucks/selectors.js'
 import CatalogTruckCard from '../CatalogTruckCard/CatalogTruckCard.jsx'
 import css from './CatalogTrucksBar.module.css'
 
 const CatalogTrucksBar = () => {
 
-  const items = useSelector(getAllTrucks)
+  const items = useSelector(selectAllTrucks)
+  
 
   return (
-    <ul className={css.truckList}>
+    <div className={css.trucksBar}>
+      <ul className={css.truckList}>
       {items?.map(({ id, name, price, rating, location, gallery, reviews, description,
         transmission, kitchen, bathroom, AC, TV, radio,}) => 
         <li key={id} className={ css.truckListItem}>
@@ -24,14 +26,18 @@ const CatalogTrucksBar = () => {
             transmission={transmission}
             kitchen={kitchen}
             bathroom={bathroom}
-            AC={AC}
-            TV={TV}
+            ac={AC}
+            tv={TV}
             radio={radio}
         />
       </li>
       )}
-
-    </ul>
+      </ul>
+      <button className={css.loadMoreBtn}
+        type='button'>
+        Load more
+      </button>
+    </div>
   )
 }
 

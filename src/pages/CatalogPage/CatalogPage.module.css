@@ -1,9 +1,4 @@
 .catalogSection{
     display: flex;
-    /* margin-top: 48px; */
-}
-
-.sidebar{
-    width: 360px;
-    margin: 0px, 64px;
+    margin-top: 48px;
 }

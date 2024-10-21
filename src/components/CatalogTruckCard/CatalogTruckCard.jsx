@@ -3,10 +3,12 @@ import { Link } from 'react-router-dom'
 import Transmission from '../../img/categories/Transmission'
 import Kitchen from '../../img/categories/Kitchen'
 import Bathroom from '../../img/categories/Bathroom'
+import AC from '../../img/categories/AC'
+import Radio from '../../img/categories/Radio'
 
 const CatalogTruckCard = ({ id, name, price, rating, location, gallery: { 0: thumb }, reviews, description,
-transmission, kitchen, bathroom, AC, TV, radio,}) => {
-
+  transmission, kitchen, bathroom, ac, tv, radio, }) => {
+  
   const textCut = (text) => {
     const wordsArray = text.split(' ')
     return wordsArray.length > 12
@@ -41,6 +43,12 @@ transmission, kitchen, bathroom, AC, TV, radio,}) => {
           </li>
           <li>
             { bathroom? <Bathroom/> : <></>}
+          </li>
+          <li>
+            { ac ? <AC/> : <></>}
+          </li>
+          <li>
+            { radio ? <Radio/> : <></>}
           </li>
         </ul>
           <Link className={css.showMoreBtn}

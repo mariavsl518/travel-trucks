@@ -9,14 +9,12 @@ import ReviewsPage from './pages/ReviewsPage/ReviewsPage.jsx';
 function App() {
   return (
     <Layout>
-  
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/catalog' element={<CatalogPage />} />
         <Route path='/details' element={<DetailsPage />} />
         <Route path='/reviews' element={<ReviewsPage/>}/>
       </Routes>
-
     </Layout>
   );
 }
