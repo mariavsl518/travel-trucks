@@ -3,12 +3,13 @@
     margin: 0px 64px;
 }
 
-.sideBarBlock{
+.sideBarForm{
     margin-bottom: 32px;
 }
 
 .sidebarTitle {
-    color: main;
+    display: inline-block;
+    color: var(--main);
     font-size: 20px;
     font-weight: 600;
     line-height: 1.2em;
@@ -31,6 +32,7 @@
     border-radius: 12px;
     border: 1px solid var(--d-grey);
     display: flex;
+    text-align: center;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -39,4 +41,32 @@
     font-weight: 500;
     line-height: 1.5em;
     letter-spacing: -0.08px;
+}
+
+.filterRadioInput{
+    display: none;
+} 
+
+.filterRadioInput:checked +  .filterListItem{
+    border-color: var(--button);
+}
+
+.searchBtn{
+    display: block;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 165px;
+    height: 56px;
+    border-radius: 200px;
+    background-color: var(--button);
+}
+
+.searchBtn:hover{
+    background-color: var(--button-hover);
 }

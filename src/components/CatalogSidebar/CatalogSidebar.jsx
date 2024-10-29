@@ -1,52 +1,128 @@
 import React from 'react'
 import css from './CatalogSidebar.module.css'
 import TVicon from '../../img/icons/TVicon'
-import AC from '../../img/categories/AC'
 import Diagram from '../../img/icons/Diagram'
 import HotCup from '../../img/icons/HotCup'
 import Drop from '../../img/icons/Drop'
 import Wind from '../../img/icons/Wind'
+import Grid3 from '../../img/icons/Grid3'
+import Grid4 from '../../img/icons/Grid4'
+import Grid9 from '../../img/icons/Grid9'
+
+
 
 
 const CatalogSidebar = () => {
+
+  const handleFilterInputChange = (evt) => { 
+    const equipment = evt.target.name==='vehicleEquipment' ? evt.target.value : ''
+    const type = evt.target.name==='vehicleType' ? evt.target.value : ''
+    const formData = {
+      equipment,
+      type
+    }
+    console.log(formData)
+    return formData
+  }
   return (
     <div className={css.sideBar}>
-      <div>Location</div>     
-      <div className={css.sideBarBlock}>
-        <p className={css.sidebarTitle}>Vehicle equipment</p>
-        <ul className={css.filterList}>
-          <li className={css.filterListItem}>
+      <form action="search"
+        className={css.sideBarForm}
+      >
+        <label htmlFor="location">Location</label>
+        <input type="text" name='location' />
+
+        <label htmlFor="filters">
+          Filters
+        </label>
+        <label className={css.sidebarTitle}>Vehicle equipment</label>
+        <div className={css.filterList}>
+            <input 
+            type="radio" 
+            value="AC" 
+            name="vehicleEquipment"
+            id='AC' 
+            className={css.filterRadioInput} />
+          <label htmlFor="AC" className={css.filterListItem}>
             <Wind/> AC
-          </li>
-          <li className={css.filterListItem}>
+          </label>
+            <input 
+            type="radio" 
+            value="automatic" 
+            name="vehicleEquipment" 
+            id='automatic' 
+            className={css.filterRadioInput} />
+          <label htmlFor="automatic" className={css.filterListItem}>
             <Diagram/> Automatic
-          </li>
-          <li className={css.filterListItem}>
+          </label>
+          <input
+            type="radio"
+            value="kitchen"
+            name="vehicleEquipment"
+            id='kitchen'
+            className={css.filterRadioInput}
+          />
+          <label htmlFor="kitchen" className={css.filterListItem}>
             <HotCup/> Kitchen
-          </li>
-          <li className={css.filterListItem}>
+          </label>
+          <input
+            type="radio"
+            value="TV"
+            name="vehicleEquipment"
+            id='TV'
+            className={css.filterRadioInput}
+          />
+          <label htmlFor="TV" className={css.filterListItem}>
             <TVicon/> TV
-          </li>
-          <li className={css.filterListItem}>
+          </label>
+          <input type="radio"
+            value="bathroom"
+            name="vehicleEquipment"
+            id='bathroom'
+            className={css.filterRadioInput}
+          />
+          <label htmlFor="bathroom" className={css.filterListItem}>
             <Drop/> Bathroom
-          </li>
-        </ul>
-      </div>
-      <div className={css.sideBarBlock}>
-        <p className={css.sidebarTitle}>Vehicle type</p>
-        <ul className={css.filterList}>
-          <li className={css.filterListItem}>
+          </label>
+        </div>
 
-          </li>
-          <li className={css.filterListItem}>
-
-          </li>
-          <li className={css.filterListItem}>
-
-          </li>
-        </ul>
-      </div>
+        <div className={css.filterList}>
+        <label className={css.sidebarTitle}>Vehicle type</label>
+          <input type="radio" 
+            value='van'
+            name='vehicleType'
+            id='van'
+            className={css.filterRadioInput}
+          />
+          <label htmlFor="van" className={css.filterListItem}>
+            <Grid3/> Van
+          </label>
+          <input type="radio" 
+            value='fullyIntegrated'
+            name='vehicleType'
+            id='fullyIntegrated'
+            className={css.filterRadioInput}
+          />
+          <label htmlFor="fullyIntegrated" className={css.filterListItem}>
+            <Grid4/> Fully Integrated
+          </label>
+          <input type="radio" 
+            value='alcove'
+            name='vehicleType'
+            id='alcove'
+            className={css.filterRadioInput}
+          />
+          <label htmlFor="alcove" className={css.filterListItem}>
+            <Grid9/> Alcove
+          </label>
+        </div>
+        <button type='button'
+          className={css.searchBtn}
+          onClick={handleFilterInputChange}
+        >Search</button>
+      </form>
     </div>
+
   )
 }
 
