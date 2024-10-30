@@ -8,8 +8,9 @@
 }
 
 .sidebarTitle {
-    display: inline-block;
+    display: block;
     color: var(--main);
+    margin-top: 32px;
     font-size: 20px;
     font-weight: 600;
     line-height: 1.2em;
@@ -64,6 +65,7 @@
     width: 165px;
     height: 56px;
     border-radius: 200px;
+    margin-top: 40px;
     background-color: var(--button);
 }
 

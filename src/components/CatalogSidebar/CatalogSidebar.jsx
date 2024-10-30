@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import css from './CatalogSidebar.module.css'
 import TVicon from '../../img/icons/TVicon'
 import Diagram from '../../img/icons/Diagram'
@@ -10,24 +10,25 @@ import Grid4 from '../../img/icons/Grid4'
 import Grid9 from '../../img/icons/Grid9'
 
 
-
-
 const CatalogSidebar = () => {
 
+  const formRef = useRef();
+
   const handleFilterInputChange = (evt) => { 
-    const equipment = evt.target.name==='vehicleEquipment' ? evt.target.value : ''
-    const type = evt.target.name==='vehicleType' ? evt.target.value : ''
-    const formData = {
-      equipment,
-      type
-    }
-    console.log(formData)
-    return formData
+    evt.preventDefault(); 
+    
+    const formData = new FormData(formRef.current)
+
+    const formDataObj = Object.fromEntries(formData.entries());
+    console.log(formDataObj)
+
   }
   return (
     <div className={css.sideBar}>
-      <form action="search"
+      <form
+        ref={formRef}
         className={css.sideBarForm}
+        onSubmit={handleFilterInputChange}
       >
         <label htmlFor="location">Location</label>
         <input type="text" name='location' />
@@ -86,8 +87,8 @@ const CatalogSidebar = () => {
           </label>
         </div>
 
-        <div className={css.filterList}>
         <label className={css.sidebarTitle}>Vehicle type</label>
+        <div className={css.filterList}>
           <input type="radio" 
             value='van'
             name='vehicleType'
@@ -116,9 +117,8 @@ const CatalogSidebar = () => {
             <Grid9/> Alcove
           </label>
         </div>
-        <button type='button'
+        <button type='submit'
           className={css.searchBtn}
-          onClick={handleFilterInputChange}
         >Search</button>
       </form>
     </div>
