@@ -1,5 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { fetchTrucks } from "./operations";
+import { selectFilterQuery } from "../filter/selectors";
+import { selectAllTrucks } from "./selectors";
 
 export const trucksSlice = createSlice({
     name: 'trucks',
@@ -30,6 +32,12 @@ export const trucksSlice = createSlice({
                 state.error = action.error.message;
             })
 })
+
+// export const selectFilteredTrucks = createSelector(
+//     [selectAllTrucks, selectFilterQuery],
+// )
+
+// selectFilteredTrucks()
 
 export const { setPage } = trucksSlice.actions;
 export default trucksSlice.reducer

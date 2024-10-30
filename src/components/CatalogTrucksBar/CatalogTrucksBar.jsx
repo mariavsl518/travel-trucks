@@ -7,6 +7,7 @@ import css from './CatalogTrucksBar.module.css'
 const CatalogTrucksBar = () => {
 
   const items = useSelector(selectAllTrucks)
+  // console.log(items)
   
 
   return (

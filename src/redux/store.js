@@ -5,6 +5,6 @@ import filterReducer from './filter/slice'
 export const store = configureStore({
     reducer: {
         trucks: trucksReducer,
-        // filter: filterReducer,
+        filter: filterReducer,
     }
 })

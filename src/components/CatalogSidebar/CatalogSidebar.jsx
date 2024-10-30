@@ -8,11 +8,17 @@ import Wind from '../../img/icons/Wind'
 import Grid3 from '../../img/icons/Grid3'
 import Grid4 from '../../img/icons/Grid4'
 import Grid9 from '../../img/icons/Grid9'
+import { selectFilterQuery } from '../../redux/filter/selectors'
+import { useDispatch, useSelector } from 'react-redux'
 
 
 const CatalogSidebar = () => {
 
+  const dispatch = useDispatch()
   const formRef = useRef();
+  const filter = useSelector(selectFilterQuery)
+
+  console.log(filter)
 
   const handleFilterInputChange = (evt) => { 
     evt.preventDefault(); 
