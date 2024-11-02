@@ -5,6 +5,7 @@ import { selectAllTrucks } from '../../redux/trucks/selectors.js'
 import CatalogTruckCard from '../CatalogTruckCard/CatalogTruckCard.jsx'
 import css from './CatalogTrucksBar.module.css'
 
+
 const CatalogTrucksBar = () => {
 
   const items = useSelector(selectAllTrucks)
@@ -34,12 +35,12 @@ const CatalogTrucksBar = () => {
       </li>
       )}
       </ul>
-      { 
+      {
         (<button className={css.loadMoreBtn}
         onClick={()=>setDispleyedItems(displayedItems+4)}
         type='button'>
         Load more
-      </button>)}
+      </button>) }
     </div>
   )
 }
