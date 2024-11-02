@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import css from './CatalogSidebar.module.css'
 import TVicon from '../../img/icons/TVicon'
 import Diagram from '../../img/icons/Diagram'

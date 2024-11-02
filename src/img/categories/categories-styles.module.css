@@ -10,3 +10,8 @@
     font-weight: 500;
     line-height: 1.25em;
 }
+
+.wrapper > svg {
+    width:20px;
+    height:20px;
+}

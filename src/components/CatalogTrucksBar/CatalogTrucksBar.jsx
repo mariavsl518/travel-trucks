@@ -1,4 +1,5 @@
 import React from 'react'
+import { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { selectAllTrucks } from '../../redux/trucks/selectors.js'
 import CatalogTruckCard from '../CatalogTruckCard/CatalogTruckCard.jsx'
@@ -7,13 +8,12 @@ import css from './CatalogTrucksBar.module.css'
 const CatalogTrucksBar = () => {
 
   const items = useSelector(selectAllTrucks)
-  // console.log(items)
-  
+  const [displayedItems, setDispleyedItems] = useState(4)
 
   return (
     <div className={css.trucksBar}>
       <ul className={css.truckList}>
-      {items?.map(({ id, name, price, rating, location, gallery, reviews, description,
+      {items?.slice(0, displayedItems).map(({ id, name, price, rating, location, gallery, reviews, description,
         transmission, kitchen, bathroom, AC, TV, radio,}) => 
         <li key={id} className={ css.truckListItem}>
         <CatalogTruckCard
@@ -34,10 +34,12 @@ const CatalogTrucksBar = () => {
       </li>
       )}
       </ul>
-      <button className={css.loadMoreBtn}
+      { 
+        (<button className={css.loadMoreBtn}
+        onClick={()=>setDispleyedItems(displayedItems+4)}
         type='button'>
         Load more
-      </button>
+      </button>)}
     </div>
   )
 }
