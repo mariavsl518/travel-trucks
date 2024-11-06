@@ -35,7 +35,7 @@ const CatalogTrucksBar = () => {
       </li>
       )}
       </ul>
-      {
+      {items?.length > displayedItems &&
         (<button className={css.loadMoreBtn}
         onClick={()=>setDispleyedItems(displayedItems+4)}
         type='button'>

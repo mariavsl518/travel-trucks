@@ -4,18 +4,28 @@ export const filterSlice = createSlice({
     name: 'filter',
     initialState: {
         location: '',
-        equipment: '',
-        type: ''
+        equipment: {
+            AC: false,
+            automatic: false,
+            kitchen: false,
+            TV: false,
+            bathroom: false
+        },
+        type: {
+            van: false,
+            fullyIntegrated: false,
+            aclove: false,
+        }
     },
 
     reducers: {
-        search: (state, action) => { 
+        setSearch: (state, action) => {
+            console.log(action.payload)
             state.location = action.payload;
         }
     },
     
-})
+});
 
-export default filterSlice.reducer
-
-// export const {search} = filterSlice.action
+export const { setSearch } = filterSlice.actions;
+export default filterSlice.reducer;
